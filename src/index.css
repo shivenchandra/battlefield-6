@@ -1,1 +1,37 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: 'General Sans', sans-serif;
+    width: 100dvw;
+    background-color: '#dfdff0';
+    overflow-x: hidden;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'circularw';
+    src: url('/fonts/circularweb-book.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'general';
+    src: url('/fonts/general.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'robertm';
+    src: url('/fonts/robert-medium.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'roberr';
+    src: url('/fonts/robert-regular.woff2') format('woff2');
+  }
+}
+
+@layer utilities {
+  .font-robertm { font-family: 'robertm', sans-serif; }
+  .font-roberr { font-family: 'roberr', sans-serif; }
+  .font-general { font-family: 'general', sans-serif; }
+  .font-circularw { font-family: 'circularw', sans-serif; }
+}
