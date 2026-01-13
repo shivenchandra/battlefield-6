@@ -128,11 +128,11 @@ const Hero = () => {
 
                 <div className='absolute left-0 top-0 z-40 size-full'>
                     <div className='mt-24 px-4 sm:px-10'>
-                        <h1 className='special-font hero-heading text-blue-100'>B<b>a</b>ttlefield</h1>
+                        <h1 className='special-font hero-heading text-blue-100'>B<b>a</b>ttlefield 6</h1>
                         <p className='mb-5 max-w-87 font-robert-regular text-blue-100'>
                             There is no better time to experience the Best FPS of the Year. <br /> Join the all-out war between NATO and Pax Armata with new maps, <br /> Hardware, and features from Season 1, and prepare for endless <br />epic moments that are only in Battlefield.
                         </p>
-                        <Button id="watch-trailer" title="Watch Trailer" leftIcon={<TiLocationArrow />} containerClass="!bg-red-500 flex-center gap-1" />
+                        <Button id="buy-now" title="Buy Now" leftIcon={<TiLocationArrow />} containerClass="!bg-red-500 flex-center gap-1" />
                     </div>
                 </div>
             </div>
