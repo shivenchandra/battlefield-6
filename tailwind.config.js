@@ -12,10 +12,10 @@ export default {
       },
       colors: {
         blue: {
-          50: "#DFDFF0",
+          50: "#525b60",
           75: "#dfdff2",
           100: "#F0F2FA",
-          200: "#010101",
+          200: "#1e1f1f",
           300: "#4FB7DD",
         },
         violet: {
