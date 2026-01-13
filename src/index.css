@@ -4,16 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---------------- GLOBAL ---------------- */
-
 body {
   width: 100dvw;
   overflow-x: hidden;
   background-color: #dfdff0;
   font-family: "General Sans", sans-serif;
 }
-
-/* ---------------- FONTS ---------------- */
 
 @layer base {
   @font-face {
@@ -42,62 +38,25 @@ body {
   }
 }
 
-/* ---------------- UTILITIES ---------------- */
-
 @layer utilities {
-
-  /* Border with opacity */
   .border-hsla {
-    @apply border;
-    border-color: rgb(255 255 255 / 0.2);
+    @apply border border-white/20;
   }
 
-  /* Navigation button */
   .nav-hover-btn {
-    @apply relative cursor-pointer;
-    font-family: "general", sans-serif;
-    font-size: 0.75rem;
-    line-height: 1rem;
-    text-transform: uppercase;
-    color: rgb(239 246 255);
-    margin-inline-start: 2.5rem;
-  }
-
-  .nav-hover-btn::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.125rem;
-    width: 100%;
-    height: 2px;
-    background-color: #262626;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 300ms cubic-bezier(0.65, 0.05, 0.36, 1);
-  }
-
-  .nav-hover-btn:hover::after {
-    transform-origin: bottom left;
-    transform: scaleX(1);
+    @apply relative ms-10 font-general text-xs uppercase text-blue-50 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
   }
 
   .floating-nav {
-    @apply border;
-    background-color: #000;
-    border-radius: 0.5rem;
+    @apply bg-black rounded-lg border;
   }
 
   .absolute-center {
-    @apply absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
   }
 
   .flex-center {
-    @apply flex;
-    align-items: center;
-    justify-content: center;
+    @apply flex justify-center items-center;
   }
 
   .mask-clip-path {
@@ -105,144 +64,70 @@ body {
   }
 
   .special-font b {
-    font-family: "zentry";
+    font-family: "Zentry";
     font-feature-settings: "ss01" on;
   }
 
   .hero-heading {
-    font-family: "zentry", sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 3rem;
-  }
-
-  @media (min-width: 640px) {
-    .hero-heading {
-      font-size: 4.5rem;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .hero-heading {
-      font-size: 6rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .hero-heading {
-      font-size: 12rem;
-    }
+    @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
   }
 
   .about-subtext {
-    position: absolute;
-    width: 100%;
-    max-width: 24rem;
-    text-align: center;
-    font-size: 1.125rem;
-    font-family: "circular-web", sans-serif;
-    bottom: -80dvh;
-    left: 50%;
-    transform: translateX(-50%);
+    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
   }
 
   .about-image {
-    position: absolute;
-    z-index: 20;
-    height: 60vh;
-    width: 24rem;
-    overflow: hidden;
-    border-radius: 1.5rem;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
+    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
   }
 
   .animated-title {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    font-family: "zentry", sans-serif;
-    text-transform: uppercase;
-    line-height: 0.8;
-    font-size: 4.5rem;
-    color: #fff;
+    @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
   }
 
   .animated-word {
-    font-family: "zentry", sans-serif;
-    font-weight: 900;
-    opacity: 0;
+    @apply special-font font-zentry font-black opacity-0;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
-    transform-origin: 50% 50% -150px;
+    transform-origin: 50% 50% -150px !important;
     will-change: opacity, transform;
   }
 
   .bento-tilt_1 {
-    @apply relative overflow-hidden transition-transform;
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    border-radius: 0.375rem;
+    @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
 
   .bento-tilt_2 {
-    @apply relative overflow-hidden transition-transform;
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    border-radius: 0.375rem;
+    @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
-
 
   .bento-title {
-    font-family: "zentry", sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 2.25rem;
-  }
-
-  @media (min-width: 768px) {
-    .bento-title {
-      font-size: 3.75rem;
-    }
+    @apply uppercase md:text-6xl text-4xl font-black font-zentry;
   }
 
   .story-img-container {
-    position: relative;
-    width: 100%;
-    height: 90vh;
+    @apply relative md:h-dvh h-[90vh] w-full;
     filter: url("#flt_tag");
   }
 
   .story-img-mask {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
+    @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
     clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
   }
 
   .story-img-content {
-    position: absolute;
-    width: 100%;
-    height: 50dvh;
-    left: 2.5rem;
-    top: 4rem;
+    @apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
   }
 
   .gallery-img-container {
-    width: 16rem;
-    height: 16rem;
-    overflow: hidden;
-    background-color: rgb(196 181 253);
+    @apply size-64 overflow-hidden bg-violet-300;
   }
 
   .gallery-img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
+    @apply size-full bg-cover;
   }
 
   .gallery-img-4 {
-    border-radius: 0.5rem;
+    @apply sm:size-80 md:h-96 md:w-[25rem] rounded-lg;
   }
 
   .sword-man-clip-path {
@@ -258,14 +143,8 @@ body {
   }
 }
 
-/* ---------------- INDICATOR ---------------- */
-
 .indicator-line {
-  width: 1px;
-  height: 4px;
-  border-radius: 9999px;
-  background-color: #fff;
-  transition: all 200ms ease-in-out;
+  @apply h-1 w-px rounded-full bg-white transition-all duration-200 ease-in-out;
 }
 
 .indicator-line.active {
@@ -276,6 +155,7 @@ body {
 @keyframes indicator-line {
   0% {
     height: 4px;
+    transform: translateY(-0px);
   }
 
   50% {
@@ -285,24 +165,112 @@ body {
 
   100% {
     height: 4px;
+    transform: translateY(-0px);
   }
 }
 
-/* ---------------- LOADER ---------------- */
-
+/* From Uiverse.io by G4b413l */
+/* https://uiverse.io/G4b413l/tidy-walrus-92 */
 .three-body {
   --uib-size: 35px;
   --uib-speed: 0.8s;
   --uib-color: #5d3fd3;
   position: relative;
   display: inline-block;
-  width: var(--uib-size);
   height: var(--uib-size);
+  width: var(--uib-size);
   animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
 }
 
+.three-body__dot {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+}
+
+.three-body__dot:after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: var(--uib-color);
+  border-radius: 50%;
+}
+
+.three-body__dot:nth-child(1) {
+  bottom: 5%;
+  left: 0;
+  transform: rotate(60deg);
+  transform-origin: 50% 85%;
+}
+
+.three-body__dot:nth-child(1)::after {
+  bottom: 0;
+  left: 0;
+  animation: wobble1 var(--uib-speed) infinite ease-in-out;
+  animation-delay: calc(var(--uib-speed) * -0.3);
+}
+
+.three-body__dot:nth-child(2) {
+  bottom: 5%;
+  right: 0;
+  transform: rotate(-60deg);
+  transform-origin: 50% 85%;
+}
+
+.three-body__dot:nth-child(2)::after {
+  bottom: 0;
+  left: 0;
+  animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
+}
+
+.three-body__dot:nth-child(3) {
+  bottom: -5%;
+  left: 0;
+  transform: translateX(116.666%);
+}
+
+.three-body__dot:nth-child(3)::after {
+  top: 0;
+  left: 0;
+  animation: wobble2 var(--uib-speed) infinite ease-in-out;
+}
+
 @keyframes spin78236 {
-  to {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes wobble1 {
+
+  0%,
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-66%) scale(0.65);
+    opacity: 0.8;
+  }
+}
+
+@keyframes wobble2 {
+
+  0%,
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(66%) scale(0.65);
+    opacity: 0.8;
   }
 }

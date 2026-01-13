@@ -21,9 +21,9 @@ export default {
         violet: {
           300: "#5724ff",
         },
-        yellow: {
-          100: "#8e983f",
-          300: "#edff66",
+        red: {
+          100: "#bc2d01",
+          300: "#c96d50",
         },
       },
     },
