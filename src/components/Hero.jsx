@@ -4,26 +4,47 @@ import { ScrollTrigger } from "gsap/all";
 import { TiLocationArrow } from "react-icons/ti";
 import { FaWindows, FaPlaystation, FaXbox, FaSteam } from "react-icons/fa";
 import { SiEpicgames } from "react-icons/si";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo, useCallback } from "react";
 
 import Button from "./Button";
 import VideoPreview from "./VideoPreview";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const BackgroundVideo = memo(({ src, onLoadedData }) => (
+    <video
+        src={src}
+        autoPlay
+        loop
+        muted
+        className="absolute left-0 top-0 size-full object-cover object-center"
+        onLoadedData={onLoadedData}
+    />
+));
+
+const videoUrls = [
+    "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-1.mp4",
+    "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-2.mp4",
+    "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-3.mp4",
+    "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-4.mp4",
+];
+
 const Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(1);
     const [hasClicked, setHasClicked] = useState(false);
+    const [currentPlayingIndex, setCurrentPlayingIndex] = useState(1);
 
     const [loading, setLoading] = useState(true);
     const [loadedVideos, setLoadedVideos] = useState(0);
 
-    const totalVideos = 4;
+    const totalVideos = videoUrls.length;
     const nextVdRef = useRef(null);
 
-    const handleVideoLoad = () => {
+    const handleVideoLoad = useCallback(() => {
         setLoadedVideos((prev) => prev + 1);
-    };
+    }, []);
+
+    const getVideoSrc = (index) => videoUrls[index - 1];
 
     useEffect(() => {
         if (loadedVideos === totalVideos - 1) {
@@ -49,6 +70,9 @@ const Hero = () => {
                     duration: 1,
                     ease: "power1.inOut",
                     onStart: () => nextVdRef.current.play(),
+                    onComplete: () => {
+                        setCurrentPlayingIndex(currentIndex);
+                    },
                 });
 
                 gsap.from("#current-video", {
@@ -81,15 +105,7 @@ const Hero = () => {
         });
     });
 
-    /* === SECOND CODE VIDEO LINKS === */
-    const videoUrls = [
-        "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-1.mp4",
-        "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-2.mp4",
-        "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-3.mp4",
-        "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-4.mp4",
-    ];
 
-    const getVideoSrc = (index) => videoUrls[index - 1];
 
     return (
         <div id="home" className="relative h-dvh w-screen overflow-x-hidden">
@@ -115,7 +131,6 @@ const Hero = () => {
                                 className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
                             >
                                 <video
-                                    ref={nextVdRef}
                                     src={getVideoSrc((currentIndex % totalVideos) + 1)}
                                     loop
                                     muted
@@ -137,14 +152,8 @@ const Hero = () => {
                         onLoadedData={handleVideoLoad}
                     />
 
-                    <video
-                        src={getVideoSrc(
-                            currentIndex === totalVideos - 1 ? 1 : currentIndex
-                        )}
-                        autoPlay
-                        loop
-                        muted
-                        className="absolute left-0 top-0 size-full object-cover object-center"
+                    <BackgroundVideo
+                        src={getVideoSrc(currentPlayingIndex)}
                         onLoadedData={handleVideoLoad}
                     />
                 </div>
