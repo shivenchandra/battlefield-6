@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react'
 import Button from "./Button";
 import { TiLocationArrow } from 'react-icons/ti';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import VideoPreview from "./VideoPreview";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,12 +25,11 @@ const Hero = () => {
 
     const handleMiniVidClick = () => {
         setHasClicked(true);
-
         setCurrentIndex(upcomingVideoIndex);
     }
 
     useEffect(() => {
-        if (loadedVideos == totalVideos - 1) {
+        if (loadedVideos === totalVideos - 1) {
             setIsLoading(false);
         }
     }, [loadedVideos])
@@ -38,6 +37,7 @@ const Hero = () => {
     useGSAP(() => {
         if (hasClicked) {
             gsap.set('#next-video', { visibility: 'visible' });
+
             gsap.to('#next-video', {
                 transformOrigin: 'center center',
                 scale: 1,
@@ -91,18 +91,22 @@ const Hero = () => {
             <div id='video-frame' className='relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75'>
                 <div>
                     <div className='mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg'>
-                        <div onClick={handleMiniVidClick} className='origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100'>
-                            <video
-                                ref={nextVideoRef}
-                                src={getVideoSrc((currentIndex % totalVideos) + 1)}
-                                loop
-                                muted
-                                id='current-video'
-                                className='size-64 origin-center scale-150 object-cover object-center'
-                                onLoadedData={handleVideoLoad}
-                            />
-                        </div>
+                        <VideoPreview>
+                            <div onClick={handleMiniVidClick} className='origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100'>
+                                <video
+                                    // FIX 1: Removed ref={nextVideoRef} from here. 
+                                    // It was causing a conflict with the main video player.
+                                    src={getVideoSrc(upcomingVideoIndex)}
+                                    loop
+                                    muted
+                                    id='current-video'
+                                    className='size-64 origin-center scale-150 object-cover object-center'
+                                    onLoadedData={handleVideoLoad}
+                                />
+                            </div>
+                        </VideoPreview>
                     </div>
+
                     <video
                         ref={nextVideoRef}
                         src={getVideoSrc(currentIndex)}
@@ -112,12 +116,15 @@ const Hero = () => {
                         className='absolute-center invisible absolute z-20 size-64 object-cover object-center'
                         onLoadedData={handleVideoLoad}
                     />
+
                     <video
                         src={getVideoSrc(currentIndex === totalVideos - 1 ? 1 : currentIndex)}
+                        // FIX 2: Added preload="auto" to help browser buffer faster
+                        preload="auto"
                         autoPlay
                         loop
                         muted
-                        className=' absolute left-0 top-0 size-full object-cover object-center'
+                        className='absolute left-0 top-0 size-full object-cover object-center'
                         onLoadedData={handleVideoLoad}
                     />
                 </div>
