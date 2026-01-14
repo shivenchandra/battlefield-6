@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Features from './components/Features'
 import Achievement from './components/Achievement'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Features />
       <Achievement />
       <Contact />
+      <Footer />
     </main>
   )
 }
