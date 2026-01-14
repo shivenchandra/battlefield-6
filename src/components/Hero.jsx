@@ -124,8 +124,7 @@ const Hero = () => {
                     <video
                         key={currentIndex}
                         src={getVideoSrc(currentIndex === totalVideos - 1 ? 1 : currentIndex)}
-                        // FIX 2: Added preload="auto" to help browser buffer faster
-                        preload="auto"
+                        preload="none"
                         autoPlay
                         loop
                         muted
