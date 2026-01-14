@@ -63,11 +63,11 @@ const BentoCard = ({ src, title, description, LearnMore }) => {
 
             <div className="relative z-10 flex size-full flex-col justify-between p-6">
                 <div className="max-w-sm">
-                    <h1 className="bento-title special-font text-red-500">
+                    <h1 className="bento-title special-font text-white">
                         {title}
                     </h1>
 
-                    <p className="mt-3 max-w-64 text-xs md:text-base text-blue-50">
+                    <p className="mt-3 max-w-64 text-xs md:text-base text-blue-100">
                         {description}
                     </p>
 
