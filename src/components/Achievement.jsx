@@ -133,7 +133,7 @@ const FloatingImage = () => {
     return (
         <section
             id="story"
-            className="relative min-h-dvh w-screen overflow-hidden bg-black text-blue-50"
+            className="relative min-h-dvh w-screen overflow-hidden bg-[url('/img/background.png')] bg-cover bg-center text-blue-50"
         >
             <div className="flex w-full flex-col items-center py-10 pb-32">
                 <p className="font-general text-sm uppercase md:text-[10px]">
