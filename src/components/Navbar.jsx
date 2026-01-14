@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { useWindowScroll } from 'react-use';
 import gsap from 'gsap';
 
-const navItems = ['Home', 'About', 'News & Community', 'Season', 'BattlePass', 'Guides', 'Contact'];
+const navItems = ['Home', 'About', 'Features', 'News & Community', 'Contact'];
 
 const Navbar = () => {
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -70,9 +70,15 @@ const Navbar = () => {
                     </div>
                     <div className='flex h-full items-center'>
                         <div className='hidden md:block'>
-                            {navItems.map((item) => (
-                                <a key={item} href={`#${item.toLowerCase()}`} className='nav-hover-btn'>
-                                    {item}
+                            {[
+                                { name: 'Home', link: '#home' },
+                                { name: 'About', link: '#about' },
+                                { name: 'Features', link: '#features' },
+                                { name: 'News & Community', link: '#achievement' },
+                                { name: 'Contact', link: '#contact' }
+                            ].map((item) => (
+                                <a key={item.name} href={item.link} className='nav-hover-btn'>
+                                    {item.name}
                                 </a>
                             ))}
                         </div>
