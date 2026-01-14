@@ -75,7 +75,13 @@ const Hero = () => {
         })
     })
 
-    const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
+    const videoUrls = [
+        "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-1.mp4",
+        "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-2.mp4",
+        "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-3.mp4",
+        "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-4.mp4"
+    ];
+    const getVideoSrc = (index) => videoUrls[index - 1];
 
     return (
         <div className='relative h-dvh w-screen overflow-x-hidden'>
@@ -94,8 +100,6 @@ const Hero = () => {
                         <VideoPreview>
                             <div onClick={handleMiniVidClick} className='origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100'>
                                 <video
-                                    // FIX 1: Removed ref={nextVideoRef} from here. 
-                                    // It was causing a conflict with the main video player.
                                     src={getVideoSrc(upcomingVideoIndex)}
                                     loop
                                     muted
@@ -118,6 +122,7 @@ const Hero = () => {
                     />
 
                     <video
+                        key={currentIndex}
                         src={getVideoSrc(currentIndex === totalVideos - 1 ? 1 : currentIndex)}
                         // FIX 2: Added preload="auto" to help browser buffer faster
                         preload="auto"
