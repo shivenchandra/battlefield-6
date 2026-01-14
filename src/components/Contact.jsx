@@ -43,7 +43,7 @@ const Contact = () => {
                         className="special-font !md:text-[6.2rem] w-full font-zentry !text-5xl !font-black !leading-[.9]"
                     />
 
-                    <Button title="Buy Now" containerClass="mt-10 cursor-pointer" />
+                    <Button title="Buy Now" containerClass="mt-10 cursor-pointer" href="https://www.ea.com/en/games/battlefield/battlefield-6/buy/checkout?platform=EA-APP&edition=standard" />
                 </div>
             </div>
         </div>

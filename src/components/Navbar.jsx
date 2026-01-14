@@ -62,10 +62,11 @@ const Navbar = () => {
                     <div className='flex items-center gap-7'>
                         <img src="/img/logo1.png" alt="logo" className='w-10 ' />
                         <Button
-                            id="platform-button"
-                            title="Platforms"
+                            id="buy-button"
+                            title="Buy Now"
                             rightIcon={<TiLocationArrow />}
                             containerClass="bg-red-500 md:flex hidden items-center justify-center gap-1"
+                            href="https://www.ea.com/en/games/battlefield/battlefield-6/buy/checkout?platform=EA-APP&edition=standard"
                         />
                     </div>
                     <div className='flex h-full items-center'>

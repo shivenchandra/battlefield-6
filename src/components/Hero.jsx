@@ -2,6 +2,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { TiLocationArrow } from "react-icons/ti";
+import { FaWindows, FaPlaystation, FaXbox, FaSteam } from "react-icons/fa";
+import { SiEpicgames } from "react-icons/si";
 import { useEffect, useRef, useState } from "react";
 
 import Button from "./Button";
@@ -158,21 +160,34 @@ const Hero = () => {
                             B<b>a</b>ttlefield 6
                         </h1>
 
-                        <p className="mb-5 max-w-87 font-general text-blue-100 ">
+                        <p className="mb-5 max-w-[19.5rem] md:max-w-[40rem] font-general text-blue-100 text-sm md:text-base">
                             There is no better time to experience the Best FPS of the Year.
-                            <br />
+                            <br className="hidden md:block" />
                             Join the all-out war between NATO and Pax Armata with new maps,
-                            <br />
+                            <br className="hidden md:block" />
                             hardware, and features from Season 1, and prepare for endless
-                            <br />
+                            <br className="hidden md:block" />
                             epic moments that are only in Battlefield.
                         </p>
 
+                        <div className="mb-3 flex items-center gap-3 text-blue-100">
+                            <span className="font-general text-xs uppercase">Available on</span>
+                            <div className="flex items-center gap-2 text-xl">
+                                <FaWindows />
+                                <img src="/img/ea app.svg" alt="EA App" className="h-5 invert opacity-100" />
+                                <FaPlaystation />
+                                <FaXbox />
+                                <FaSteam />
+                                <SiEpicgames />
+                            </div>
+                        </div>
+
                         <Button
-                            id="buy-now"
-                            title="Buy Now"
+                            id="watch-trailer"
+                            title="Watch Trailer"
                             leftIcon={<TiLocationArrow />}
                             containerClass="!bg-red-500 flex-center gap-1"
+                            href="https://youtu.be/pgNCgJG0vnY?si=kkhN25otB63oQ4nv"
                         />
                     </div>
                 </div>

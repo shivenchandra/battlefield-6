@@ -280,6 +280,7 @@ const FloatingImage = () => {
                                 id="buy-btn"
                                 title="buy now"
                                 containerClass="mt-5"
+                                href="https://www.ea.com/en/games/battlefield/battlefield-6/buy/checkout?platform=EA-APP&edition=standard"
                             />
                         </div>
                     </div>
