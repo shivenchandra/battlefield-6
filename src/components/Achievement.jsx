@@ -272,10 +272,8 @@ const FloatingImage = () => {
 
                         {/* RIGHT SIDE: TEXT + CTA (1 Column) */}
                         <div className="flex w-full flex-col items-center justify-end md:col-span-1 md:items-end md:justify-end pb-2">
-                            <p className="mb-4 max-w-xs text-center font-circular-web text-violet-50 md:text-right">
-                                Reinforce yourself for the best-selling shooter of 2025 with the
-                                Battlefield™ 6 Phantom Edition. Includes a Battlefield Pro
-                                Token, the Phantom Pack, and more.
+                            <p className="mb-4 max-w-xs text-center md:text-right font-general text-xs tracking-wider text-white/60">
+                                Reinforce yourself for the best-selling shooter of 2025 with the Battlefield™ 6 Phantom Edition. Includes a Battlefield Pro Token, the Phantom Pack, and more.
                             </p>
 
                             <Button

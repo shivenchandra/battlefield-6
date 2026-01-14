@@ -105,7 +105,7 @@ const Features = () => {
                     <p className='font-circular-web text-lg text-blue-50'>
                         THIS IS BATTLEFIELD 6
                     </p>
-                    <p className='max-w-md font-circular-web text-lg text-blue-50 opacity-50'>
+                    <p className='max-w-md font-general text-lg text-blue-50 tracking-wide opacity-50'>
                         All-out war, fast-paced close-quarters combat, tactical destruction – Welcome to the definitive Battlefield experience.
                     </p>
                 </div>
