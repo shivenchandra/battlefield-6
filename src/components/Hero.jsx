@@ -81,6 +81,7 @@ const Hero = () => {
         "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-3.mp4",
         "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-4.mp4"
     ];
+
     const getVideoSrc = (index) => videoUrls[index - 1];
 
     return (
@@ -106,6 +107,8 @@ const Hero = () => {
                                     id='current-video'
                                     className='size-64 origin-center scale-150 object-cover object-center'
                                     onLoadedData={handleVideoLoad}
+                                    // OPTIMIZATION 1: Don't load the mini-preview until needed
+                                    preload="none"
                                 />
                             </div>
                         </VideoPreview>
@@ -119,12 +122,16 @@ const Hero = () => {
                         id='next-video'
                         className='absolute-center invisible absolute z-20 size-64 object-cover object-center'
                         onLoadedData={handleVideoLoad}
+                        // OPTIMIZATION 2: Don't load the invisible transition video yet
+                        preload="none"
                     />
 
                     <video
+                        // KEY: Forces React to treat this as a new video on change
                         key={currentIndex}
                         src={getVideoSrc(currentIndex === totalVideos - 1 ? 1 : currentIndex)}
-                        preload="none"
+                        // OPTIMIZATION 3: 'metadata' is lighter than 'auto'
+                        preload="metadata"
                         autoPlay
                         loop
                         muted
