@@ -11,14 +11,16 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(1);
     const [hasClicked, setHasClicked] = useState(false);
+
+    // CHANGED: We don't need to count videos anymore, just check if loading is done
     const [isLoading, setIsLoading] = useState(true);
-    const [loadedVideos, setLoadedVideos] = useState(0);
 
     const totalVideos = 4;
     const nextVideoRef = useRef(null);
 
-    const handleVideoLoad = () => {
-        setLoadedVideos((prev) => prev + 1);
+    // CHANGED: Simplified logic. When the main video loads, the loading screen goes away.
+    const handleMainVideoLoad = () => {
+        setIsLoading(false);
     }
 
     const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
@@ -27,12 +29,6 @@ const Hero = () => {
         setHasClicked(true);
         setCurrentIndex(upcomingVideoIndex);
     }
-
-    useEffect(() => {
-        if (loadedVideos === totalVideos - 1) {
-            setIsLoading(false);
-        }
-    }, [loadedVideos])
 
     useGSAP(() => {
         if (hasClicked) {
@@ -106,8 +102,7 @@ const Hero = () => {
                                     muted
                                     id='current-video'
                                     className='size-64 origin-center scale-150 object-cover object-center'
-                                    onLoadedData={handleVideoLoad}
-                                    // OPTIMIZATION 1: Don't load the mini-preview until needed
+                                    // REMOVED onLoadedData here so it doesn't block the site
                                     preload="none"
                                 />
                             </div>
@@ -121,22 +116,21 @@ const Hero = () => {
                         muted
                         id='next-video'
                         className='absolute-center invisible absolute z-20 size-64 object-cover object-center'
-                        onLoadedData={handleVideoLoad}
-                        // OPTIMIZATION 2: Don't load the invisible transition video yet
+                        // REMOVED onLoadedData here so it doesn't block the site
                         preload="none"
                     />
 
                     <video
-                        // KEY: Forces React to treat this as a new video on change
                         key={currentIndex}
                         src={getVideoSrc(currentIndex === totalVideos - 1 ? 1 : currentIndex)}
-                        // OPTIMIZATION 3: 'metadata' is lighter than 'auto'
-                        preload="metadata"
+                        // RESTORED to 'auto' so it buffers immediately
+                        preload="auto"
                         autoPlay
                         loop
                         muted
                         className='absolute left-0 top-0 size-full object-cover object-center'
-                        onLoadedData={handleVideoLoad}
+                        // KEPT onLoadedData here: The site waits ONLY for this video
+                        onLoadedData={handleMainVideoLoad}
                     />
                 </div>
 
