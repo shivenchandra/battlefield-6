@@ -28,4 +28,4 @@ React · Vite · Tailwind CSS · JavaScript
 
 ### Status
 
-Active — iterating on visuals, animations, and structure.
+Active development — backend integration and additional features coming soon.
