@@ -100,7 +100,7 @@ const BentoCard = ({ src, title, description, LearnMore }) => {
 const Features = () => {
     return (
         <section id="features" className='bg-[url("/img/background.png")] bg-cover bg-center pb-52'>
-            <div className='container mx-auto px-3 mid:px-10'>
+            <div className='container mx-auto px-5 md:px-10'>
                 <div className='px-5 py-32'>
                     <p className='font-circular-web text-lg text-blue-50'>
                         THIS IS BATTLEFIELD 6
@@ -126,7 +126,7 @@ const Features = () => {
                             LearnMore
                         />
                     </BentoTilt>
-                    <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+                    <BentoTilt className="bento-tilt_1 row-span-1 ms-5 md:col-span-1 md:ms-0">
                         <BentoCard
                             src="https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/feature-3.mp4"
                             title={<>Cl<b>a</b>ss<b>es</b></>}
@@ -134,7 +134,7 @@ const Features = () => {
                             LearnMore
                         />
                     </BentoTilt>
-                    <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+                    <BentoTilt className="bento-tilt_1 me-5 md:col-span-1 md:me-0">
                         <BentoCard
                             src="https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/feature-4.mp4"
                             title={<>T<b>A</b>CTIC<b>A</b>L <b>D</b>ESTR<b>U</b>C<b>T</b>ION</>}
@@ -143,7 +143,7 @@ const Features = () => {
                         />
                     </BentoTilt>
                     <BentoTilt className="bento-tilt_2">
-                        <div className="flex size-full flex-col justify-between bg-red-500 p-5">
+                        <div className="flex size-full flex-col justify-between bg-[#DC3401] p-5">
                             <h1 className="bento-title special-font max-w-64 text-black">
                                 Le<b>a</b>rn M<b>o</b>re!
                             </h1>

@@ -13,7 +13,7 @@ const Button = ({ title, id, rightIcon, leftIcon, containerClass, href }) => {
         </>
     );
 
-    const className = `group relative z-10 w-fit cursor-pointer overflow-hidden bg-red-500 px-5 py-3 text-black ${containerClass}`;
+    const className = `group relative z-10 w-fit cursor-pointer overflow-hidden bg-[#DC3401] px-5 py-3 text-black ${containerClass}`;
 
     return href ? (
         <a id={id} href={href} className={className} target="_blank" rel="noopener noreferrer">

@@ -159,7 +159,7 @@ const Hero = () => {
                 </div>
 
                 {/* === SECOND CODE TEXT === */}
-                <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-red-500">
+                <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-[#DC3401]">
                     E<b>A</b>
                 </h1>
 
@@ -195,7 +195,7 @@ const Hero = () => {
                             id="watch-trailer"
                             title="Watch Trailer"
                             leftIcon={<TiLocationArrow />}
-                            containerClass="!bg-red-500 flex-center gap-1"
+                            containerClass="!bg-[#DC3401] flex-center gap-1"
                             href="https://youtu.be/pgNCgJG0vnY?si=kkhN25otB63oQ4nv"
                         />
                     </div>

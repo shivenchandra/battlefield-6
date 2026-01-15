@@ -3,8 +3,8 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Navbar from './components/Navbar'
 import Features from './components/Features'
-import Achievement from './components/Achievement'
-import Contact from './components/Contact'
+import NewsCommunity from './components/NewsCommunity'
+import GetStarted from './components/GetStarted'
 import Footer from './components/Footer'
 
 const App = () => {
@@ -14,8 +14,8 @@ const App = () => {
       <Hero />
       <About />
       <Features />
-      <Achievement />
-      <Contact />
+      <NewsCommunity />
+      <GetStarted />
       <Footer />
     </main>
   )

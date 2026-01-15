@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { useWindowScroll } from 'react-use';
 import gsap from 'gsap';
 
-const navItems = ['Home', 'About', 'Features', 'News & Community', 'Contact'];
+const navItems = ['Home', 'About', 'Features', 'News & Community', 'Get Started'];
 
 const Navbar = () => {
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -56,16 +56,16 @@ const Navbar = () => {
         }
     }, [isAudioPlaying])
     return (
-        <div ref={navContainerRef} className='fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6'>
+        <div ref={navContainerRef} className='fixed inset-x-4 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6'>
             <header className='absolute top-1/2 w-full -translate-y-1/2'>
                 <nav className='flex size-full items-center justify-between p-4'>
                     <div className='flex items-center gap-7'>
-                        <img src="/img/logo1.png" alt="logo" className='w-10 ' />
+                        <img src="/img/logo2.png" alt="logo" className='w-10 ' />
                         <Button
                             id="buy-button"
                             title="Buy Now"
                             rightIcon={<TiLocationArrow />}
-                            containerClass="bg-red-500 md:flex hidden items-center justify-center gap-1"
+                            containerClass="bg-[#DC3401] md:flex hidden items-center justify-center gap-1"
                             href="https://www.ea.com/en/games/battlefield/battlefield-6/buy/checkout?platform=EA-APP&edition=standard"
                         />
                     </div>
@@ -75,8 +75,8 @@ const Navbar = () => {
                                 { name: 'Home', link: '#home' },
                                 { name: 'About', link: '#about' },
                                 { name: 'Features', link: '#features' },
-                                { name: 'News & Community', link: '#achievement' },
-                                { name: 'Contact', link: '#contact' }
+                                { name: 'News & Community', link: '#news-community' },
+                                { name: 'Get Started', link: '#get-started' }
                             ].map((item) => (
                                 <a key={item.name} href={item.link} className='nav-hover-btn'>
                                     {item.name}

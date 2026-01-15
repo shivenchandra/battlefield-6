@@ -9,7 +9,7 @@ const socialLinks = [
 
 const Footer = () => {
     return (
-        <footer className="w-screen bg-red-500 py-4 text-black">
+        <footer className="w-screen bg-[#DC3401] py-4 text-black">
             <div className="container mx-auto grid grid-cols-1 gap-4 px-4 md:grid-cols-3 items-center">
 
                 <p className="text-center text-sm font-light md:text-left justify-self-center md:justify-self-start">

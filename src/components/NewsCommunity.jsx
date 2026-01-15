@@ -34,7 +34,7 @@ const ArrowButton = ({ direction, onClick, disabled }) => (
     </button>
 );
 
-const FloatingImage = () => {
+const NewsCommunity = () => {
     const frameRef = useRef(null);
     const [currentScrollIndex, setCurrentScrollIndex] = useState(0);
 
@@ -132,7 +132,7 @@ const FloatingImage = () => {
 
     return (
         <section
-            id="achievement"
+            id="news-community"
             className="relative min-h-dvh w-screen overflow-hidden bg-[url('/img/background.png')] bg-cover bg-center text-blue-50"
         >
             <div className="flex w-full flex-col items-center py-10 pb-32">
@@ -256,7 +256,7 @@ const FloatingImage = () => {
                                                     </span>
                                                 </div>
 
-                                                <h4 className="font-circular-web text-xs font-bold uppercase leading-tight text-white transition-colors group-hover:text-red-500">
+                                                <h4 className="font-circular-web text-xs font-bold uppercase leading-tight text-white transition-colors group-hover:text-[#DC3401]">
                                                     {item.title}
                                                 </h4>
 
@@ -290,4 +290,4 @@ const FloatingImage = () => {
     );
 };
 
-export default FloatingImage;
+export default NewsCommunity;
