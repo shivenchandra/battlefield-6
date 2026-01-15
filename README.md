@@ -1,7 +1,7 @@
 <h1 align="center">Battlefield-6</h1>
 
 <p align="center">
-  A solo frontend UI redesign inspired by Battlefield 6
+  A frontend UI redesign inspired by old design of Zentry.com
 </p>
 
 <p align="center">
