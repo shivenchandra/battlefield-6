@@ -23,10 +23,10 @@ const BackgroundVideo = memo(({ src, onLoadedData }) => (
 ));
 
 const videoUrls = [
-    "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-1.mp4",
-    "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-2.mp4",
-    "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-3.mp4",
-    "https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/hero-4.mp4",
+    "https://res.cloudinary.com/dip8jbsmz/video/upload/v1768502534/hero-1_pde1yb.mp4",
+    "https://res.cloudinary.com/dip8jbsmz/video/upload/v1768502536/hero-2_hbt3jm.mp4",
+    "https://res.cloudinary.com/dip8jbsmz/video/upload/v1768502538/hero-3_qt7yyj.mp4",
+    "https://res.cloudinary.com/dip8jbsmz/video/upload/v1768502529/hero-4_wl96mk.mp4",
 ];
 
 const Hero = () => {

@@ -111,7 +111,7 @@ const Features = () => {
                 </div>
                 <BentoTilt className='border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]'>
                     <BentoCard
-                        src="https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/feature-1.mp4"
+                        src="https://res.cloudinary.com/dip8jbsmz/video/upload/v1768502534/feature-1_m7sluy.mp4"
                         title={<>Mod<b>e</b>s</>}
                         description="Seize glory in large-scale modes like Conquest, Breakthrough, and Rush. Jump into fast-paced intense experiences with King of the Hill and Domination."
                         LearnMore
@@ -120,7 +120,7 @@ const Features = () => {
                 <div className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
                     <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
                         <BentoCard
-                            src="https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/feature-2.mp4"
+                            src="https://res.cloudinary.com/dip8jbsmz/video/upload/v1768502523/feature-2_ziah4d.mp4"
                             title={<>M<b>a</b>ps</>}
                             description="Fight in iconic locations all over the world like Cairo, Brooklyn, Gibraltar and more."
                             LearnMore
@@ -128,7 +128,7 @@ const Features = () => {
                     </BentoTilt>
                     <BentoTilt className="bento-tilt_1 row-span-1 ms-5 md:col-span-1 md:ms-0">
                         <BentoCard
-                            src="https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/feature-3.mp4"
+                            src="https://res.cloudinary.com/dip8jbsmz/video/upload/v1768502521/feature-3_yhczwd.mp4"
                             title={<>Cl<b>a</b>ss<b>es</b></>}
                             description="Four classes, more ways to battle. Battlefield empowers your squad to play the way you want."
                             LearnMore
@@ -136,7 +136,7 @@ const Features = () => {
                     </BentoTilt>
                     <BentoTilt className="bento-tilt_1 me-5 md:col-span-1 md:me-0">
                         <BentoCard
-                            src="https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/feature-4.mp4"
+                            src="https://res.cloudinary.com/dip8jbsmz/video/upload/v1768502533/feature-4_h44t5e.mp4"
                             title={<>T<b>A</b>CTIC<b>A</b>L <b>D</b>ESTR<b>U</b>C<b>T</b>ION</>}
                             description="Transform your surroundings for a strategic advantage. More reactive, consistent, and tactical than ever before."
                             LearnMore
@@ -152,7 +152,7 @@ const Features = () => {
                     </BentoTilt>
                     <BentoTilt className="bento-tilt_2">
                         <video
-                            src="https://qam4oe93ifx0kmcc.public.blob.vercel-storage.com/feature-5.mp4"
+                            src="https://res.cloudinary.com/dip8jbsmz/video/upload/v1768502540/feature-5_nychwd.mp4"
                             loop
                             muted
                             autoPlay
