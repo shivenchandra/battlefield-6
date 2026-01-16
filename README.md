@@ -22,7 +22,7 @@ Built as a personal portfolio project.
 
 ### Stack
 
-React · Vite · Tailwind CSS · JavaScript
+React · Vite · Tailwind CSS · JavaScript · GSAP · Cloudinary
 
 ---
 
